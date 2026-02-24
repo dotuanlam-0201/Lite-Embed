@@ -1,2 +1,6 @@
-node_modules
+node_modules/
+dist/
+types/
+*.log
+.DS_Store
 package-lock.json

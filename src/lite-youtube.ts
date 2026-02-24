@@ -1,11 +1,12 @@
 export class LiteYouTube extends HTMLElement {
-  private videoId: string | null = null;
+  private videoId: string = '';
   private isWarmed: boolean = false;
 
   constructor() {
     super();
   }
   connectedCallback() {
+    this.videoId = this.getAttribute('videoId') || '';
     this.renderPreview();
     this.setupObserver();
     this.addEventListener('click', this.addIframe, { once: true });
@@ -35,23 +36,21 @@ export class LiteYouTube extends HTMLElement {
 
   private warmConnections() {
     if (this.isWarmed) return;
+    this.isWarmed = true
     const link = document.createElement('link');
     link.rel = 'preconnect';
     link.href = 'https://www.youtube-nocookie.com';
     document.head.appendChild(link);
-    this.isWarmed = true;
   }
 
   private addIframe() {
-    if (this.isWarmed) return;
-    this.isWarmed = true;
     const iframe = document.createElement("iframe")
     iframe.width = "600";
     iframe.height = "400";
     iframe.src = `https://www.youtube.com/embed/${this.videoId}`
     iframe.allowFullscreen = true;
     iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share";
-    this.shadowRoot?.getElementById("container")?.appendChild(iframe)
+    this.shadowRoot?.appendChild(iframe)
   }
 
 }
