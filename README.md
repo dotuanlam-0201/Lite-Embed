@@ -26,7 +26,7 @@ npm install lite-embed
 Import the module in your entry file or directly in your HTML:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/lite-embed/dist/lite-embed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lite-embed@1.0.2/dist/lite-embed.min.js"></script>
 <!-- Use the component -->
 <lite-youtube videoId="dQw4w9WgXcQ"></lite-youtube>
 ```

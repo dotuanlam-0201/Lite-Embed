@@ -1,6 +1,6 @@
 {
   "name": "lite-embed",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "High performance lazy-load embeds for YouTube and Vimeo",
   "type": "module",
   "main": "./dist/index.cjs",
