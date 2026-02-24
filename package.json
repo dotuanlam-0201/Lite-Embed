@@ -1,0 +1,36 @@
+{
+  "name": "lite-embed",
+  "version": "1.0.0",
+  "description": "High performance lazy-load embeds for YouTube and Vimeo",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "DO TUAN LAM",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "rollup": "^3.0.0",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.0"
+  }
+}
